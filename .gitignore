@@ -1,0 +1,20 @@
+.env
+*.env
+*.db.sqlite3
+*.db.sqlite
+db.sqlite3
+jaizussd/db.sqlite3
+__pycache__/
+*.pyc
+.idea
+*.idea
+.idea/*
+citbank.log
+*.log
+*.sqlite
+*.sqlite3
+.DS_Store
+*.DS_Store
+
+# Project image and file folders
+profile_picture/
