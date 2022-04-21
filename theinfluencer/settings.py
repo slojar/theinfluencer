@@ -1,3 +1,4 @@
+import os
 from datetime import timedelta
 from pathlib import Path
 
@@ -14,9 +15,10 @@ SECRET_KEY = 'django-insecure-i_@@)pg-i&ur^v$7((*dn92=9x3h64vv2k5#lee&2=q0vu7gw5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["142.93.115.25"]
 
 CORS_ALLOWED_ORIGINS = [
+    "142.93.115.25"
     "https://the-influencer.herokuapp.com",
     "http://localhost:8080",
     "http://localhost:80",
@@ -93,10 +95,10 @@ WSGI_APPLICATION = 'theinfluencer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'influencer',
-        'USER': 'influencer',
-        'PASSWORD': 'influencer',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'shop_Inf',
+        'USER': 'shop_Inf',
+        'PASSWORD': '!srk%2^fay#2rLP5',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -138,6 +140,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = '/home/influencer/theinfluencer/static'
+
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
