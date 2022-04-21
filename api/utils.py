@@ -1,3 +1,5 @@
+import logging
+
 import requests
 from django.conf import settings
 from .models import Profile, Page
@@ -8,10 +10,16 @@ FIELDS = settings.FACEBOOK_USER_DETAIL_FIELDS
 TRANSPORT = 'cors'
 
 
+def log_request(*args):
+    for arg in args:
+        logging.info(arg)
+
+
 def get_user_detail(uid, access_token):
     url = f'{BASE_URL}/{uid}?fields={FIELDS}&transport={TRANSPORT}&access_token={access_token}'
 
     response = requests.request('GET', url).json()
+    log_request(url, response)
     return response
 
 

@@ -1,4 +1,5 @@
 import os
+import logging
 from datetime import timedelta
 from pathlib import Path
 
@@ -167,3 +168,48 @@ FACEBOOK_USER_DETAIL_FIELDS = str('accounts%7Babout%2Caccess_token%2Cbio%2Cpictu
                                   '%2Cwebsite%2Cpage_token%2Cproducts%7D%2Cfirst_name%2Clast_name%2Cbirthday%2Cabout'
                                   '%2Cgender%2Cpicture%7Burl%7D%2Cemail%2Cmiddle_name%2Crelationship_status'
                                   '%2Chometown%2Clocation')
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '[{asctime}] {levelname} {module} {thread:d} - {message}',
+            'style': '{',
+            'datefmt': '%d-%m-%Y %H:%M:%S'
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'theinfluencer.log',
+            'formatter': 'verbose',
+        },
+    },
+    'root': {
+        'handlers': ['file'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'django.server': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+
+
+
