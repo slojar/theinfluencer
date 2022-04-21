@@ -3,13 +3,14 @@
 *.db.sqlite3
 *.db.sqlite
 db.sqlite3
-jaizussd/db.sqlite3
+theinfluencer/db.sqlite3
 __pycache__/
 *.pyc
 .idea
 *.idea
 .idea/*
-citbank.log
+theinfluencer.log
+influencer.log
 *.log
 *.sqlite
 *.sqlite3
@@ -18,3 +19,4 @@ citbank.log
 
 # Project image and file folders
 profile_picture/
+static/

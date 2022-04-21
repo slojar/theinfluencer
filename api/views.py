@@ -23,9 +23,8 @@ class LoginView(views.APIView):
                             status=status.HTTP_400_BAD_REQUEST)
 
         user, _ = User.objects.get_or_create(username=uid)
-        if _:
-            user.password = make_password(access_token)
-            user.save()
+        user.password = make_password(access_token)
+        user.save()
 
         user = authenticate(request, username=uid, password=access_token)
 
