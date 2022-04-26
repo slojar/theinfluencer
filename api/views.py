@@ -42,8 +42,8 @@ class LoginView(views.APIView):
                 }
                 return Response(data)
         except Exception as err:
-            return Response({'detail': 'An error has occurred', 'error_message': str(err),
-                             'reason': 'access_token expired'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'detail': 'An error has occurred', 'error_message': str(err)},
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 class HomeView(views.APIView):
